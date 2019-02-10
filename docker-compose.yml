@@ -18,6 +18,14 @@ services:
       - dbnet
       - apinet
 
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 9090:9090
+    networks:
+      - dbnet
+
   db:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
